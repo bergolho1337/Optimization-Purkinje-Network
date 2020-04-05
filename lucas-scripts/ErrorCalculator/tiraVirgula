@@ -1,0 +1,13 @@
+# ====================================================================================================
+# Script que substitui todas as virgulas de um arquivo por pontos
+# Entrada: arquivo original
+# Saida: arquivo alterado
+# ====================================================================================================
+#!/bin/bash
+
+if [ $# -ne 2 ]; then
+    echo "Usage:> $0 <inFile> <outFile>"
+    exit -1
+else
+    sed 's/,/./g' $1 > $2
+fi

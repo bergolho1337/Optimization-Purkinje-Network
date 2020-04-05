@@ -1,0 +1,11 @@
+Versao 1.0
+
+Cresce uma árvore de Purkinje seguindo as regras do L-System sobre uma estrutura de um miocárdio.
+
+Devem ser passados os arquivos com a nuvem de pontos do endocárdio em VTK e outro contendo o numero de 
+terminais e suas coordenadas (x,y,z).
+
+A saida eh um arquivo .vtk contendo a arvore de Purkinje sobre o endocardio e um arquivo .txt com 
+a numeracao dos vertices terminais (PMJ's).
+
+

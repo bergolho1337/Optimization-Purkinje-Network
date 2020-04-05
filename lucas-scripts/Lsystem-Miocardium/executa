@@ -1,0 +1,43 @@
+# ====================================================================================================
+# Script shell que gera uma arvore de Purkinje seguindo as regras do L-System sobre um miocardio,
+# calcula o tempo de ativacao pelo algoritmo do FMM e converte a saida do FMM de um arquivo .vtp
+# para .vtk
+# ====================================================================================================
+
+#!/bin/bash
+
+if [ -e purkinjeMiocardium ]; then
+    make clean
+fi
+
+echo "======================================================================================"
+echo "Compilando PurkinjeMiocardium ..."
+make
+echo "======================================================================================"
+
+echo "======================================================================================"
+echo "Executando PurkinjeMiocardium ..."
+./purkinjeMiocardium 500 2.0 0.05 Miocardium/Malha_Reduzida_Jesuliana/vent_reduzida_r4.vtk Miocardium/Malha_Reduzida_Jesuliana/terminaisBenja_reduzido.dat
+echo "======================================================================================"
+
+echo "======================================================================================"
+echo "Executando FMM ..."
+/bin/bash geodesicsonmeshes_purkinje/rodaFMM
+echo "======================================================================================"
+
+#echo "======================================================================================"
+#echo "Converting VTP file to VTK ..."
+#if [ ! -f ./Codigos_Auxiliares/VTP_To_VTK/ConvertFile ]; then
+#    echo "Compilando conversor ..."
+#    cmake /Codigos_Auxiliares/VTP_To_VTK/
+#    make
+#fi
+#./Codigos_Auxiliares/VTP_To_VTK/ConvertFile ./geodesicsonmeshes_purkinje/res/vent_ou.vtp
+#echo "Done"
+#echo "======================================================================================"
+
+echo "======================================================================================"
+echo "[+] Shell script terminado com sucesso! Arquivo com resultados estao em ..."
+echo "'/home/lucas/Documentos/Mestrado/Dissertacao/Purkinje_Miocardium/geodesicsonmeshes_purkinje/res'"
+echo "======================================================================================"
+

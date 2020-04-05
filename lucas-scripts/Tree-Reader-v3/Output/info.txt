@@ -1,0 +1,10 @@
+================= INFORMATION FROM TREE ==============================
+Number of nodes = 971
+Number of edges = 970
+Total size of the tree = 1712.35283
+Number of segments = 603
+Number of bifurcations = 301
+Mean size of the edges = 1.76531 +/- 0.46495
+Mean size of the segments = 5.67004 +/- 5.82423
+Mean angle of the bifurcations = 61.09922 +/- 30.95259
+======================================================================
